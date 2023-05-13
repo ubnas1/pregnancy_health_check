@@ -24,10 +24,34 @@
 
     <!-- Main CSS-->
     <link href="../static/css/main.css" rel="stylesheet" media="all">
+    <script>
+        function myFunction(){
+            var data_received = '{{ data }}';
+            if (data_received == '0'){
+                
+                var risk_level = 'High'
+                document.getElementById("myText").innerHTML = risk_level;
+                console.log(risk_level)
+
+            } else if (data_received == '1'){
+
+                var risk_level = 'Medium'
+                document.getElementById("myText").innerHTML = risk_level;
+                console.log(risk_level)
+
+            } else if (data_received == '2'){
+
+                var risk_level = 'Low'
+                document.getElementById("myText").innerHTML = risk_level;
+                console.log(risk_level)
+
+            } 
+        }
+    </script>
 </head>
 
 
-<body>
+<body onload="myFunction()">
 
     <div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
         <div class="wrapper wrapper--w780">
@@ -36,16 +60,16 @@
                 <div class="card-body">
                     <h2 class="title">Your Health Check Result:</h2>
                     <div>
-                        <p class="form-control">The result is: {{data}}</p>
+                        <p class="form-control">Your Risk level is:  <span id="myText"></span></p>
                     </div>
                     
                 </div>
             </div>
         </div>
     </div>
-
-
-
+    
+    
+    
     <script src="../static/vendor/jquery/jquery.min.js"></script>
     <!-- Vendor JS-->
     <script src="../static/vendor/select2/select2.min.js"></script>
@@ -57,7 +81,6 @@
     <div class="card-body">
     </div>
     
-    <script type="text/javascript" src="{{ url_for('static', filename='js/result.js') }}"></script>
     
 </body>
 </html>
