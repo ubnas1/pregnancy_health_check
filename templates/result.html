@@ -91,11 +91,42 @@ crossorigin=""></script>
         <div class="p-t-20">
             <button onClick="document.getElementById('map').scrollIntoView();" class=" btn btn--pill btn--green" type="button" value="check">Map</button>
         </div>
+        <div class="p-t-20">
+            <button onClick="document.getElementById('visuals').scrollIntoView();" class=" btn btn--pill btn--green" type="button" value="check">Chart</button>
+        </div>
     </div>
     
       <!-- The div where we'll insert our map -->
-      <div id="map"></div>
-    
+    <div id="map"></div>
+
+
+    <div class="col-md-6 page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins" id="visuals">
+        <div class="wrapper wrapper--w780">
+            <div class="col-md-12">
+                <div class="well">
+                    <h2>5 Worst Countries for Maternal Mortality</h2>
+                    <select id="selDataset_1"></select>
+                    <canvas id="donut_chart" width="400" height="400"></canvas>
+                    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="well">
+                    <h4>Mortality Rate by Country</h4>
+                    <select id="selDataset"></select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div id = "line"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <script src="../static/vendor/jquery/jquery.min.js"></script>
     <!-- Vendor JS-->
     <script src="../static/vendor/select2/select2.min.js"></script>
@@ -105,6 +136,7 @@ crossorigin=""></script>
     <!-- Main JS-->
     <script type="text/javascript" src="{{ url_for('static', filename='js/global.js') }}"></script>
     <script type="text/javascript" src="../static/js/display.js"></script>
+    <script type="text/javascript" src="../static/js/chart.js"></script>
 
 
     <div class="card-body">

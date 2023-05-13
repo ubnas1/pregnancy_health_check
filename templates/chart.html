@@ -60,6 +60,8 @@ crossorigin=""></script>
                  
 
         <div class="col-md-6">
+          </div>
+          <div class="col-md-12">
             <div class="well">
               <h2>5 Worst Countries for Maternal Mortality</h2>
               <select id="selDataset_1"></select>
@@ -67,12 +69,21 @@ crossorigin=""></script>
               <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
             </div>
           </div>
+          <div class="col-md-12">
+            <div class="well">
+              <h4>Mortality Rate by Country</h4>
+              <select id="selDataset"></select>
+            </div>
+          </div>
 
+          <div class="row">
+            <div class="col-md-6">
+              <div id = "line"></div>
+            </div>
 
-
-        <div class="p-t-20">
+        <!-- <div class="p-t-20">
             <button onClick="document.getElementById('map').scrollIntoView();" class=" btn btn--pill btn--green" type="button" value="check">Map</button>
-        </div>
+        </div> -->
     </div>
     
     <script src="../static/vendor/jquery/jquery.min.js"></script>
@@ -80,9 +91,11 @@ crossorigin=""></script>
     <script src="../static/vendor/select2/select2.min.js"></script>
     <script src="../static/vendor/datepicker/moment.min.js"></script>
     <script src="../static/vendor/datepicker/daterangepicker.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
     
     <!-- Main JS-->
-    <script type="text/javascript" src="{{ url_for('static', filename='js/global.js') }}"></script>
+    <!-- <script type="text/javascript" src="{{ url_for('static', filename='js/global.js') }}"></script> -->
     <script type="text/javascript" src="../static/js/chart.js"></script>
 
 
