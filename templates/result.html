@@ -29,19 +29,19 @@
             var data_received = '{{ data }}';
             if (data_received == '0'){
                 
-                var risk_level = 'High'
+                var risk_level = 'Your Risk level is ** HIGH ** Please consult doctor immediately. '
                 document.getElementById("myText").innerHTML = risk_level;
                 console.log(risk_level)
 
             } else if (data_received == '1'){
 
-                var risk_level = 'Medium'
+                var risk_level = 'Your Risk level is ** MEDIUM ** Be cautious of your health. Consult doctor if requires.'
                 document.getElementById("myText").innerHTML = risk_level;
                 console.log(risk_level)
 
             } else if (data_received == '2'){
 
-                var risk_level = 'Low'
+                var risk_level = 'Congratulations! Your Risk level is ** LOW ** Stay healthy.'
                 document.getElementById("myText").innerHTML = risk_level;
                 console.log(risk_level)
 
@@ -60,9 +60,8 @@
                 <div class="card-body">
                     <h2 class="title">Your Health Check Result:</h2>
                     <div>
-                        <p class="form-control">Your Risk level is:  <span id="myText"></span></p>
+                        <p class="form-control"><span id="myText"></span></p>
                     </div>
-                    
                 </div>
             </div>
         </div>
