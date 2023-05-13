@@ -238,6 +238,8 @@ h6 {
   -moz-transition: all 0.4s ease;
   transition: all 0.4s ease;
   font-size: 18px;
+  margin:auto;
+  display:block;
 }
 
 .btn--radius {
@@ -256,8 +258,12 @@ h6 {
   background: #57b846;
 }
 
-.btn--green:hover {
-  background: #4dae3c;
+.btn--red {
+  background: #ff6666;
+}
+
+.btn--red:hover {
+  background: #b30000;
 }
 
 /* ==========================================================================

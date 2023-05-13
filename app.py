@@ -1,6 +1,8 @@
 # import necessary libraries
-import os
 import json
+from sqlalchemy.ext.automap import automap_base
+from sqlalchemy.orm import Session
+from sqlalchemy import create_engine, func
 import pickle
 from flask import (
     Flask,
@@ -9,6 +11,11 @@ from flask import (
     request
 )
 
+
+
+# getting the data from our JSON file
+with open("Resources/geojson.geojson") as json_file:
+    polygons_data = json.load(json_file)
 
 #################################################
 # Flask Setup
@@ -61,6 +68,21 @@ def predict():
     final_prediction = str(prediction[0])
     
     return render_template('result.html',data=final_prediction)
+
+
+
+
+#################################################
+# polygons route 
+#################################################
+
+
+@app.route("/polygons")
+def polygons_list():
+    response = jsonify(polygons_data)
+    response.headers.add('Access-Control-Allow-Origin', '*')
+
+    return response
     
 
 

@@ -20,3 +20,5 @@ Which health conditions are the strongest indications for health risks during pr
 This dataset is directly from healthcare IoT devices. The author's source is from Daffodil International University. They are specified to be IoT devices in remote areas. This dataset represents a common instance for data scientists in which collaboration with a subject matter expert could provide a second opinion in terms of the best parameters for cleansing and preprocessing the data.
 
 https://www.kaggle.com/datasets/csafrit2/maternal-health-risk-data
+
+Data Source: WHO, UNICEF, UNFPA, World Bank Group and UNPD (MMEIG) - February 2023
