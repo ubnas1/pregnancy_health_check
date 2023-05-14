@@ -42,10 +42,14 @@ app = Flask(__name__)
 # Loading Machine Learning Model
 #################################################
 
-file_name = 'saved_model.sav'
+file_name_log_regression = 'saved_model.sav'
 
-model = pickle.load(open(file_name, 'rb'))
+model_log_regression = pickle.load(open(file_name_log_regression, 'rb'))
 
+
+file_name_random_forest = 'saved_model_rf.sav'
+
+model_random_forest = pickle.load(open(file_name_random_forest, 'rb'))
 
 
 #################################################
@@ -77,7 +81,7 @@ def predict():
     
     test_list = [age, sbp, dbp, bs, bt, hr]
     
-    prediction = model.predict([test_list])
+    prediction = model_random_forest.predict([test_list])
     
     final_prediction = str(prediction[0])
     
