@@ -42,10 +42,7 @@ app = Flask(__name__)
 # Loading Machine Learning Model
 #################################################
 
-file_name_log_regression = 'saved_model.sav'
-
-model_log_regression = pickle.load(open(file_name_log_regression, 'rb'))
-
+# using the random forest model because of higher accuracy
 
 file_name_random_forest = 'saved_model_rf.sav'
 
@@ -67,6 +64,9 @@ def index():
 
 @app.route("/model", methods=["POST"])
 def predict():
+    
+    # receiving the input values in variables
+    
     age = float(request.form["age"])
     
     sbp = float(request.form["sbp"])
@@ -79,11 +79,19 @@ def predict():
     
     hr = float(request.form["hr"])
     
+    # making a list of input features
+    
     test_list = [age, sbp, dbp, bs, bt, hr]
+    
+    # making prediction
     
     prediction = model_random_forest.predict([test_list])
     
+    # convert to string
+    
     final_prediction = str(prediction[0])
+    
+    # rendering template with the prediction result
     
     return render_template('result.html',data=final_prediction)
 
@@ -112,6 +120,8 @@ def polygons_list():
 def mortality_rate():
     
     session = Session(engine)
+    
+    # fetching data from database
     
     result = session.query(Data.Country, Data.year_2000, Data.year_2005, Data.year_2010, Data.year_2015, Data.year_2020).all()
     
