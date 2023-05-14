@@ -58,6 +58,12 @@ processes the data, applies the model prediction and forwards to the relevant ro
 
 ----------------------------------------------------------------
 
+# How to Run the applicaton
+
+open terminal and type ./run.sh to run the application.
+
+----------------------------------------------------------------
+
 # About Dataset
 
 ### Context

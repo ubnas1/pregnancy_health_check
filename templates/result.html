@@ -3,79 +3,81 @@
 
 <head>
 <!-- Required meta tags-->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="Colorlib Templates">
-<meta name="author" content="Colorlib">
-<meta name="keywords" content="Colorlib Templates">
-<link rel="shortcut icon" href="#" />
-<!-- Title Page-->
-<title>Maternal Health Check</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+    <link rel="shortcut icon" href="#" />
+    <!-- Title Page-->
+    <title>Maternal Health Check</title>
 
-<!-- Icons font CSS-->
-<link href="../static/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-<link href="../static/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-<!-- Font special for pages-->
-<link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-<!-- Leaflet CSS -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-crossorigin="" />
+    <!-- Icons font CSS-->
+    <link href="../static/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="../static/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin="" />
 
-<!-- Leaflet JavaScript code -->
-<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-crossorigin=""></script>
+    <!-- Leaflet JavaScript code -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
 
-<!-- Turf Javascript code -->
-<script src='https://unpkg.com/@turf/turf@6/turf.min.js'></script>
+    <!-- Turf Javascript code -->
+    <script src='https://unpkg.com/@turf/turf@6/turf.min.js'></script>
 
-    <!-- D3 library -->
-<script src="https://d3js.org/d3.v5.min.js"></script>
+        <!-- D3 library -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
 
- <!-- Leaflet CSS -->
- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
- integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
- crossorigin=""/>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+    integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+    crossorigin=""/>
 
- <!-- leaflet-choropleth JavaScript -->
- <script type="text/javascript" src="../static/js/choropleth.js"></script>
+    <!-- leaflet-choropleth JavaScript -->
+    <script type="text/javascript" src="../static/js/choropleth.js"></script>
 
- <!-- Our CSS -->
- <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <!-- Our CSS -->
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
 
- <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
-<!-- Vendor CSS-->
-<link href="../static/vendor/select2/select2.min.css" rel="stylesheet" media="all">
-<link href="../static/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+    <!-- Vendor CSS-->
+    <link href="../static/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="../static/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
 
-<!-- Main CSS-->
-<link href="../static/css/main.css" rel="stylesheet" media="all">
-<script>
-    function myFunction(){
-        var data_received = '{{ data }}';
-        if (data_received == '0'){
-            
-            var risk_level = 'Your Risk level is ** HIGH ** Please consult doctor immediately. '
-            document.getElementById("myText").innerHTML = risk_level;
+    <!-- Main CSS-->
+    <link href="../static/css/main.css" rel="stylesheet" media="all">
 
-        } else if (data_received == '1'){
+<!-- receiving the data from flask route and output the result -->
+    <script>
+        function myFunction(){
+            var data_received = '{{ data }}';
+            if (data_received == '0'){
+                
+                var risk_level = 'Your Risk level is ** HIGH ** Please consult doctor immediately. '
+                document.getElementById("myText").innerHTML = risk_level;
 
-            var risk_level = 'Your Risk level is ** MEDIUM ** Be cautious of your health. Consult doctor if requires.'
-            document.getElementById("myText").innerHTML = risk_level;
+            } else if (data_received == '1'){
 
-        } else if (data_received == '2'){
+                var risk_level = 'Your Risk level is ** MEDIUM ** Be cautious of your health. Consult doctor if requires.'
+                document.getElementById("myText").innerHTML = risk_level;
 
-            var risk_level = 'Congratulations! Your Risk level is ** LOW ** Stay healthy.'
-            document.getElementById("myText").innerHTML = risk_level;
+            } else if (data_received == '2'){
 
-        } 
-    }
-</script>
+                var risk_level = 'Congratulations! Your Risk level is ** LOW ** Stay healthy.'
+                document.getElementById("myText").innerHTML = risk_level;
+
+            } 
+        }
+    </script>
 </head>
 
-
+<!-- display the result -->
 <body onload="myFunction()">
 
     <div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
@@ -90,9 +92,11 @@ crossorigin=""></script>
                 </div>
             </div>
         </div>
+
         <div class="p-t-20">
             <button onClick="document.getElementById('map').scrollIntoView();" class=" btn btn--pill btn--green" type="button" value="check">Map</button>
         </div>
+
         <div class="p-t-20">
             <button onClick="document.getElementById('visuals').scrollIntoView();" class=" btn btn--pill btn--green" type="button" value="check">Chart</button>
         </div>
@@ -108,6 +112,9 @@ crossorigin=""></script>
                 <div class="well">
                     <h2>Worst Countries for Maternal Mortality</h2>
                     <select id="selDataset_1"></select>
+                    
+                                  <!-- donut chart -->
+
                     <canvas id="donut_chart" width="400" height="400"></canvas>
                     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
                 </div>
@@ -119,7 +126,9 @@ crossorigin=""></script>
                     <select id="selDataset"></select>
                 </div>
             </div>
-        
+            
+                  <!-- Line chart -->
+
             <div>
                 <div class="col-md-12">
                     <div id = "line"></div>
