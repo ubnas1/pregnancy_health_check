@@ -44,10 +44,10 @@
                             <input type="number" class="form-control" placeholder="DiastolicBP" name="dbp">
                         </div>
                         <div class="form-group"> 
-                            <input type="number" class="form-control" placeholder="Blood Sugar" name="bs">
+                            <input type="number" step="0.01" class="form-control" placeholder="Blood Sugar" name="bs">
                         </div>
                         <div class="form-group"> 
-                            <input type="number" class="form-control" placeholder="Body Temperature" name="bt">
+                            <input type="number" class="form-control" placeholder="Body Temperature (F)" name="bt">
                         </div>
                         <div class="form-group"> 
                             <input type="number" class="form-control" placeholder="Heart Rate" name="hr">
@@ -70,24 +70,7 @@
     
     <!-- Main JS-->
     <script type="text/javascript" src="{{ url_for('static', filename='js/global.js') }}"></script>
-    <!-- <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script> -->
     
-    <!-- <script src="../static/js/global.js"></script> -->
-    <!-- <script src="../static/js/main.js"></script> -->
-    
-    
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</body>
 
 </html>
-<!-- end document-->
-
-
-
-<!-- form-control -->
-<!-- form-group -->
-<!-- <div class="form-group">
-    <input class="form-control" type="text" placeholder="Result" id="result">
-</div> -->
-<!-- <script>
-    var result = '{{final_prediction}}';
-</script> -->

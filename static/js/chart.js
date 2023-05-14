@@ -1,134 +1,20 @@
 url = "http://127.0.0.1:5000/mortality";
 
-// Fetch the JSON data and console log it
+// Fetch the JSON data
 let xValue = [2000,2005,2010,2015,2020];
 
 d3.json(url).then(function(data){
-
-    // chart init
+  
+  // chart init
   let yValue = [data[0].year_2000, data[0].year_2005, data[0].year_2010, data[0].year_2015, data[0].year_2020];
-    // console.log(data[1].Country);
   let country = data[0].Country;
-    // console.log(country);
-
-
-dropdown_value (data);
-top_5_2020(data,donut_chart)
-// mortality_trend (xValue, yValue, country)
-
+  
+  
+  dropdown_value (data);
+  top_5_2020(data,donut_chart)
+  // mortality_trend (xValue, yValue, country)
+  
 });
-
-
-
-
-
-
-
-
-
-// #################################################################
-// mortality_trend
-// #################################################################
-
-
-d3.selectAll("#selDataset").on("change", getData);
-
-function getData() {
-  let dropdownMenu = d3.selectAll("#selDataset");
-  let item = dropdownMenu.property("value");
-
-  let index = [];
-
-  d3.json(url).then(function(data){
-
-    for (let j = 0; j < data.length; j++) {
-      if (data[j].Country == item) {
-        index = j;
-        console.log(index)
-      }
-  }
-
-  // chart for dropdown box
-  let yValue = [data[index].year_2000, data[index].year_2005, data[index].year_2010, data[index].year_2015, data[index].year_2020];
-  let xValue = [2000,2005,2010,2015,2020];
-
-  let country = data[index].Country;
-  // 
-       let values = [data[index].Year_2020]
-
-       mortality_trend(xValue, yValue, country);
-  });
-}
-
-
-
-// line chart function
-function mortality_trend (xValue, yValue, country) {
-    var trace1 = {
-        x: xValue,
-        y: yValue,
-        mode: "lines+markers",
-        name: country + 'Mortality',
-    };
-    var layout = {
-        title: country + ' Total Emission Trend<br>(Unit: kilotonnes)'
-    }
-    var data = [trace1];
-    Plotly.newPlot('line', data, layout);
-}
-// #################################################################
-// end  mortality_trend
-// #################################################################
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// #################################################################
-// line chart
-// #################################################################
-
-
-// line chart function
-function mortality_trend (xValue, yValue, country) {
-    var trace1 = {
-        x: xValue,
-        y: yValue,
-        mode: "lines+markers",
-        name: country + 'Total Mortality Rate',
-    };
-    var layout = {
-        title: country + ' Total Mortality Rate'
-    }
-    var data = [trace1];
-    Plotly.newPlot('line', data, layout);
-}
-
-// #################################################################
-// END line chart
-// #################################################################
-
-
-
-
-
-
-
-
-
 
 
 
@@ -155,6 +41,92 @@ function dropdown_value (items) {
 
 
 
+
+// #################################################################
+// mortality_trend
+// #################################################################
+
+
+
+d3.selectAll("#selDataset").on("change", getData);
+
+function getData() {
+  let dropdownMenu = d3.selectAll("#selDataset");
+  let item = dropdownMenu.property("value");
+
+  let index = [];
+
+  d3.json(url).then(function(data){
+
+    for (let j = 0; j < data.length; j++) {
+      if (data[j].Country == item) {
+        index = j;
+      }
+    }
+    
+    // chart for dropdown box
+    let yValue = [data[index].year_2000, data[index].year_2005, data[index].year_2010, data[index].year_2015, data[index].year_2020];
+    let xValue = [2000,2005,2010,2015,2020];
+    
+    let country = data[index].Country;
+    // 
+    //  let values = [data[index].Year_2020]
+    
+    console.log(xValue)
+       mortality_trend(xValue, yValue, country);
+  });
+}
+
+
+// #################################################################
+// end  mortality_trend
+// #################################################################
+
+// // #################################################################
+// // line chart
+// // #################################################################
+
+
+// line chart function
+function mortality_trend (xValue, yValue, country) {
+    var trace1 = {
+        x: xValue,
+        y: yValue,
+        // mode: "lines+markers",
+        name: 'Mortality Rate of ' + country + ' (per 100,000 deaths)',
+    };
+    var layout = {
+        title: 'Mortality Rate of ' + country + ' (per 100,000 deaths)',
+        plot_bgcolor: "rgba(174, 251, 252, 0.2)",
+        paper_bgcolor: "rgba(0, 0, 0, 0)",
+        xaxis: {
+          title: {
+            text: 'Year',
+            font: {
+              family: 'Courier New, monospace',
+              size: 18,
+              color: '#7f7f7f'
+            }
+          },
+        },
+        yaxis: {
+          title: {
+            text: 'Deaths',
+            font: {
+              family: 'Courier New, monospace',
+              size: 18,
+              color: '#7f7f7f'
+            }
+          }
+        }
+    }
+    var data = [trace1];
+    Plotly.newPlot('line', data, layout);
+}
+
+// // #################################################################
+// // END line chart
+// // #################################################################
 
 
 
@@ -194,7 +166,6 @@ function top_5_2020(data, donut_chart){
     }
   }
   var donut_chart = donut_chart (topValues, top_5_countries);
-  //return console.log(topValues, top_5_countries) 
   return donut_chart
 }
 
@@ -281,7 +252,6 @@ function top_5_2015(data, donut_chart){
   function getData_1() {
     let dropdownMenu = d3.selectAll("#selDataset_1");
     let item = dropdownMenu.property("value");
-    console.log(item)
   
     d3.json(url).then(function(data){
       if (item == "Year_2020") {
@@ -322,12 +292,12 @@ function donut_chart (data, labels) {
           datasets: [{
               data: data,
               backgroundColor: [ 
-                  'rgba(14, 127, 0, .5)',
-                  'rgba(110, 154, 22, .5)',
-                  'rgba(170, 202, 42, .5)',
-                  'rgba(202, 209, 95, .5)',
-                  'rgba(210, 206, 145, .5)',
-                  'rgba(170, 202, 42, .5)',
+                  'rgba(255, 0, 0, .5)',
+                  'rgba(156, 24, 24, .5)',
+                  'rgba(219, 83, 33, .5)',
+                  'rgba(246, 140, 62, .5)',
+                  'rgba(243, 182, 95, .5)',
+                  'rgba(240, 243, 118, .5)',
               ],
               borderWidth: 1
           }]

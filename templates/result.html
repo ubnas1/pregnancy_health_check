@@ -44,6 +44,8 @@ crossorigin=""></script>
  <!-- Our CSS -->
  <link rel="stylesheet" type="text/css" href="../static/css/style.css">
 
+ <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
 <!-- Vendor CSS-->
 <link href="../static/vendor/select2/select2.min.css" rel="stylesheet" media="all">
 <link href="../static/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
@@ -104,22 +106,22 @@ crossorigin=""></script>
         <div class="wrapper wrapper--w780">
             <div class="col-md-12">
                 <div class="well">
-                    <h2>5 Worst Countries for Maternal Mortality</h2>
+                    <h2>Worst Countries for Maternal Mortality</h2>
                     <select id="selDataset_1"></select>
                     <canvas id="donut_chart" width="400" height="400"></canvas>
                     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
                 </div>
             </div>
-
+                </br></br></br></br>
             <div class="col-md-12">
                 <div class="well">
                     <h4>Mortality Rate by Country</h4>
                     <select id="selDataset"></select>
                 </div>
             </div>
-
-            <div class="row">
-                <div class="col-md-6">
+        
+            <div>
+                <div class="col-md-12">
                     <div id = "line"></div>
                 </div>
             </div>
