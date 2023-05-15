@@ -44,7 +44,7 @@ app = Flask(__name__)
 
 # using the random forest model because of higher accuracy
 
-file_name_random_forest = 'Resources/saved_model_rf.sav'
+file_name_random_forest = 'saved_model_rf.sav'
 
 model_random_forest = pickle.load(open(file_name_random_forest, 'rb'))
 
