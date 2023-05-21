@@ -2,7 +2,7 @@
 
 ## Project Introduction
 
-This project uses machine learning to calculate the health of a user by using user given input health features.
+This app uses machine learning to calculate the health of a user by using user given input health features.
 
 The Second part of this project uses a dataset from WHO to display a choropleth map of all the countries with their 
 maternal mortality rate from 2000 - 2020.
@@ -22,6 +22,7 @@ train.ipynb file is created and used to train the ML models. Two models have bee
 
 The model is saved using pickle and then used in Flask application to make predictions.
 
+
 # Part 2
 
 ## Visualizations
@@ -31,22 +32,32 @@ The model is saved using pickle and then used in Flask application to make predi
 A Leaflet.js choropleth map is generated and displayed using the data from world geojson file purposely edited to 
 include countries mortality numbers for period 2000 - 2020.
 
+![image](https://github.com/ubnas1/pregnancy_health_check/assets/116352196/774b763e-6af4-4621-9aef-11b5b20a03c0)
+
+
 2. Donut Chart - Plotly.js
 
 A donut chart of worst countries (Mortality numbers per 1000 live births) is created using plotly.js library.
 
 The data is fetched from Flask API route which gets the data from sqlite database.
 
+![image](https://github.com/ubnas1/pregnancy_health_check/assets/116352196/8e63a57e-9e87-46f3-a44b-02d799c4e594)
+
+
 3. Line Chart - Plotly.js
 
 A line chart is also displayed which shows the selected countries' (selected from dropdown menu) mortality numbers over
 the years through line chart.
+
+![image](https://github.com/ubnas1/pregnancy_health_check/assets/116352196/becad8e2-0cb8-4203-b112-66fc67b350e7)
 
 ----------------------------------------------------------------
 
 # Front End
 
 An input form is created using a prebuilt free to use bootstrap template. 
+
+![image](https://github.com/ubnas1/pregnancy_health_check/assets/116352196/a86cfbb0-e299-4c9c-b59d-f2b863b362c2)
 
 ----------------------------------------------------------------
 
